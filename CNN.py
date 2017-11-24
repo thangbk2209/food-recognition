@@ -19,7 +19,7 @@ from PIL import Image
 size_image = 64
 cutoff = 500
 # so luong anh cho moi nhan
-numbers = 100
+numbers = 5
 
 def getSum(path):
     sum = 0
