@@ -28,7 +28,7 @@ def getSum(path):
         sum += num
     return sum
 #lay tong so file train :
-sum = getSum("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/data/food-101/images")
+sum = getSum("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/images")
 # print(sum)
 #
 # Y_all = np.zeros(sum)
@@ -66,8 +66,8 @@ def listdirs(path):
 
 #
 if __name__ == '__main__':
-    listdirs("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/data/food-101/images")
-    sum_laber = len(os.listdir("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/data/food-101/images"))
+    listdirs("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/images")
+    sum_laber = len(os.listdir("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/images"))
     Y_all = np_utils.to_categorical(Y_all, sum_laber)
     X_all /= 255.0
     # #print(Y_all)
