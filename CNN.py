@@ -17,7 +17,8 @@ from keras.applications.vgg16 import VGG16
 from PIL import Image
 
 size_image = 64
-cutoff = 500 # số lượng ảnh cho mỗi 1 nhãn
+cutoff = 500
+# so luong anh cho moi nhan
 numbers = 5
 
 def getSum(path):
