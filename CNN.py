@@ -39,7 +39,7 @@ X_all = np.zeros((cutoff * numbers, size_image, size_image, 3), dtype='float64')
 def listdirs(path):
     count_X = 0
     label = 0
-    # chạy thử với số lượng nhãn là : numbers
+    # chay thu voi so luong nhan la: numbers
     for d in os.listdir(path)[:numbers]:
         if os.path.isdir(os.path.join(path, d)):
             local_count = 0
@@ -71,8 +71,7 @@ if __name__ == '__main__':
     Y_all = np_utils.to_categorical(Y_all, sum_laber)
     X_all /= 255.0
     # #print(Y_all)
-
-    # tách tập train, test từ tập ban đầu
+    # tach tap train, test tu tap ban dau
     X_train,X_test,Y_train,Y_test = train_test_split(X_all, Y_all, test_size=0.1, random_state=42)
     print(X_train.shape)
     print(X_test.shape)
