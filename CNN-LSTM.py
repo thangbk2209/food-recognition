@@ -83,43 +83,48 @@ if __name__ == '__main__':
 
 
     # model CNN
-    model = Sequential()
-    model.add(Convolution2D(256, 3, 3, activation='relu', input_shape=(size_image, size_image,3)))
+    CNN = Sequential()
+    CNN.add(Convolution2D(256, 3, 3, activation='relu', input_shape=(size_image, size_image,3)))
     # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    # model.add(Convolution2D(256,(3,3)))
-    # model.add(Activation('relu'))
-    # # model.add(MaxPooling2D(pool_size=(2,2)))
+    CNN.add(Convolution2D(256,(3,3)))
+    CNN.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(2,2)))
 
-    # model.add(Convolution2D(256, (3, 3)))
-    # model.add(Activation('relu'))
-    # # model.add(MaxPooling2D(pool_size=(2, 2)))
+    CNN.add(Convolution2D(256, (3, 3)))
+    CNN.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    # model.add(Convolution2D(256, (3, 3)))
-    # model.add(Activation('relu'))
-    # # model.add(MaxPooling2D(pool_size=(2, 2)))
+    CNN.add(Convolution2D(256, (3, 3)))
+    CNN.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    # model.add(Convolution2D(256, (3, 3)))
-    # model.add(Activation('relu'))
-    # # model.add(MaxPooling2D(pool_size=(2, 2)))
+    CNN.add(Convolution2D(256, (3, 3)))
+    CNN.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    # model.add(Convolution2D(256, (3, 3)))
-    # model.add(Activation('relu'))
-    # # model.add(MaxPooling2D(pool_size=(2, 2)))
+    CNN.add(Convolution2D(256, (3, 3)))
+    CNN.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    # model.add(Convolution2D(256, (3, 3)))
-    # model.add(Activation('relu'))
-    # # model.add(MaxPooling2D(pool_size=(2, 2)))
+    CNN.add(Convolution2D(256, (3, 3)))
+    CNN.add(Activation('relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Convolution2D(256, (3, 3)))
-    model.add(Activation('relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
+    CNN.add(Convolution2D(256, (3, 3)))
+    CNN.add(Activation('relu'))
+    CNN.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Flatten())
-    model.add(Dense(64, activation='relu'))
+    CNN.add(Flatten())
+    CNN.add(Dense(64, activation='relu'))
     # model.add(Dropout(0.5))
 
-    model.add(Dense(sum_laber, activation='softmax'))
+    CNN.add(Dense(sum_laber, activation='relu'))
+    model = Sequential()
+
+    model.add(TimeDistributed(CNN, activation='relu'))
+    model.add(LSTM(4, activation = 'relu'))
+    model.add(Dense(1))
 
     # model = VGG16(include_top=True, input_shape=(size_image, size_image, 3),
     #               classes=sum_laber, weights=None, pooling='max')
@@ -133,33 +138,6 @@ if __name__ == '__main__':
 
     score = model.evaluate(X_test, Y_test, verbose=1)
 
-    # model =Sequential()
-    #
-    # model.add(Convolution2D(32,(3,3), input_shape=(size_image, size_image, 3)))
-    # model.add(Activation('relu'))
-    # model.add(MaxPooling2D(pool_size=(2,2)))
-    #
-    # model.add(Convolution2D(32,(3,3), input_shape=(size_image, size_image, 3)))
-    # model.add(Activation('relu'))
-    # model.add(MaxPooling2D(pool_size=(2,2)))
-    #
-    # model.add(Convolution2D(64,(3,3), input_shape=(size_image, size_image, 3)))
-    # model.add(Activation('relu'))
-    # model.add(MaxPooling2D(pool_size=(2,2)))
-    #
-    # model.add(Flatten())
-    # model.add(Dense(64))
-    # model.add(Activation('relu'))
-    # model.add(Dropout(0.5))
-    # model.add(Dense(sum_train))
-    # model.add(Activation('sigmoid'))
-    #
-    # model.compile(loss='binary_crossentropy',optimizer='rmsprop',metrics=['accuracy'])
-    #
-    #
-    # model.fit(X_train, Y_train, batch_size=32, nb_epoch=10, verbose=1)
-    #
-    # score = model.evaluate(X_test, Y_test, verbose=0)
 
 
 
