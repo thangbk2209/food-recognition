@@ -71,7 +71,7 @@ def listdirs(path):
 
 #
 if __name__ == '__main__':
-    listdirs("food/train1")
+    listdirs("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/images")
     sum_laber = len(os.listdir("/mnt/volume/ggcluster/spark-2.1.1-bin-hadoop2.7/thangbk2209/food-101/images"))
 
     Y_all = np_utils.to_categorical(Y_all, sum_laber)
@@ -136,7 +136,7 @@ if __name__ == '__main__':
               validation_data=(X_test, Y_test))
 
     score = model.evaluate(X_test, Y_test, verbose=1)
-
+    # print score
 
 
 

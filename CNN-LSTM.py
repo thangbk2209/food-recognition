@@ -19,7 +19,7 @@ from PIL import Image
 size_image = 64
 cutoff = 500
 # so luong anh cho moi nhan
-numbers = 100
+numbers = 20
 
 def getSum(path):
     sum = 0
@@ -116,7 +116,7 @@ if __name__ == '__main__':
     CNN.add(MaxPooling2D(pool_size=(2, 2)))
 
     CNN.add(Flatten())
-    CNN.add(Dense(64, activation='relu'))
+    # CNN.add(Dense(64, activation='relu'))
     # model.add(Dropout(0.5))
 
     CNN.add(Dense(sum_laber, activation='relu'))
@@ -124,7 +124,7 @@ if __name__ == '__main__':
 
     model.add(TimeDistributed(CNN, activation='relu'))
     model.add(LSTM(4, activation = 'relu'))
-    model.add(Dense(1))
+    model.add(Dense(1, activation='relu'))
 
     # model = VGG16(include_top=True, input_shape=(size_image, size_image, 3),
     #               classes=sum_laber, weights=None, pooling='max')
