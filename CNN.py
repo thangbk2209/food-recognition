@@ -84,34 +84,34 @@ if __name__ == '__main__':
 
     # model CNN
     model = Sequential()
-    model.add(Convolution2D(256, 3, 3, activation='relu', input_shape=(size_image, size_image,3)))
+    model.add(Convolution2D(64, 3, 3, activation='relu', input_shape=(size_image, size_image,3)))
     # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Convolution2D(256,(3,3)))
+    model.add(Convolution2D(64,(3,3)))
     model.add(Activation('relu'))
     # model.add(MaxPooling2D(pool_size=(2,2)))
 
-    model.add(Convolution2D(256, (3, 3)))
+    model.add(Convolution2D(64, (3, 3)))
     model.add(Activation('relu'))
     # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Convolution2D(256, (3, 3)))
+    model.add(Convolution2D(64, (3, 3)))
     model.add(Activation('relu'))
     # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Convolution2D(256, (3, 3)))
+    model.add(Convolution2D(64, (3, 3)))
     model.add(Activation('relu'))
     # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Convolution2D(256, (3, 3)))
+    model.add(Convolution2D(64, (3, 3)))
     model.add(Activation('relu'))
     # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Convolution2D(256, (3, 3)))
+    model.add(Convolution2D(64, (3, 3)))
     model.add(Activation('relu'))
     # model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Convolution2D(256, (3, 3)))
+    model.add(Convolution2D(64, (3, 3)))
     model.add(Activation('relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
